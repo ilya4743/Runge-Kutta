@@ -6,13 +6,13 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    ui->lineEdit->setValidator(new QDoubleValidator(ui->lineEdit));
-    ui->lineEdit_2->setValidator(new QDoubleValidator(ui->lineEdit_2));
-    ui->lineEdit_3->setValidator(new QDoubleValidator(ui->lineEdit_3));
-    ui->lineEdit_4->setValidator(new QDoubleValidator(ui->lineEdit_4));
-    ui->lineEdit_5->setValidator(new QDoubleValidator(ui->lineEdit_5));
-    ui->lineEdit_6->setValidator(new QDoubleValidator(ui->lineEdit_6));
-    ui->lineEdit_7->setValidator(new QDoubleValidator(ui->lineEdit_7));
+//    ui->lineEdit->setValidator(new QDoubleValidator(ui->lineEdit));
+//    ui->lineEdit_2->setValidator(new QDoubleValidator(ui->lineEdit_2));
+//    ui->lineEdit_3->setValidator(new QDoubleValidator(ui->lineEdit_3));
+//    ui->lineEdit_4->setValidator(new QDoubleValidator(ui->lineEdit_4));
+//    ui->lineEdit_5->setValidator(new QDoubleValidator(ui->lineEdit_5));
+//    ui->lineEdit_6->setValidator(new QDoubleValidator(ui->lineEdit_6));
+//    ui->lineEdit_7->setValidator(new QDoubleValidator(ui->lineEdit_7));
 }
 
 MainWindow::~MainWindow()
@@ -36,34 +36,33 @@ void MainWindow::on_action_triggered()
 
 void MainWindow::makeGraph(std::pair<QVector<double>, QVector<double>> res)
 {
+    double x0=*std::min_element(res.first.begin(),res.first.end());
+    double y0=*std::min_element(res.second.begin(),res.second.end());
+    double x=*std::max_element(res.first.begin(),res.first.end());
+    double y=*std::max_element(res.second.begin(),res.second.end());
 
-    QVector<double> x(101), y(101); // initialize with entries 0..100
-    for (int i=0; i<101; ++i)
-    {
-      x[i] = i/50.0 - 1; // x goes from -1 to 1
-      y[i] = x[i]*x[i]; // let's plot a quadratic function
-    }
-    // create graph and assign data to it:
+    ui->widget->setInteraction(QCP::iRangeDrag, true);
     ui->widget->addGraph();
     ui->widget->graph(0)->setData(res.first, res.second);
-    // give the axes some labels:
     ui->widget->xAxis->setLabel("x, м");
     ui->widget->yAxis->setLabel("y, м");
-    // set axes ranges, so we see all data:
-    ui->widget->xAxis->setRange(-1, 1);
-    ui->widget->yAxis->setRange(0, 1);
+    ui->widget->xAxis->setRange(x0, x);
+    ui->widget->yAxis->setRange(y0, y);
     ui->widget->replot();
 }
 
 void MainWindow::on_pushButton_clicked()
 {
-    double t=ui->lineEdit->text().toDouble();
+    double t0=ui->lineEdit->text().toDouble();
+    double t=ui->lineEdit_8->text().toDouble();
     double dt=ui->lineEdit_2->text().toDouble();
-    double x=ui->lineEdit_3->text().toDouble();
-    double y=ui->lineEdit_4->text().toDouble();
+    double x0=ui->lineEdit_3->text().toDouble();
+    double y0=ui->lineEdit_4->text().toDouble();
     double Ux=ui->lineEdit_5->text().toDouble();
     double Uy=ui->lineEdit_6->text().toDouble();
     double g=ui->lineEdit_7->text().toDouble();
-    std::pair<QVector<double>, QVector<double>> test=Runge_Kutta::calc(t,dt,x,y,Ux,Uy,g);
-}
+    std::pair<QVector<double>, QVector<double>> test=Runge_Kutta::calc(t,dt,x0,y0,Ux,Uy,g);
 
+    //std::pair<QVector<double>, QVector<double>> test=Runge_Kutta1::calc(t0,t,y0,dt);
+    makeGraph(test);
+}

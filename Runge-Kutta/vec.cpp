@@ -20,7 +20,7 @@ vec vec::operator -(const vec& b) const
    return(c);
 }
 
-vec operator *(float a, vec b)
+vec operator *(double a, vec b)
 {
    vec c;
    c.x = a * b.x;
@@ -30,7 +30,7 @@ vec operator *(float a, vec b)
    return(c);
 }
 
-vec operator *(vec b, float a)
+vec operator *(vec b, double a)
 {
    vec c;
    c.x = a * b.x;

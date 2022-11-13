@@ -3,6 +3,7 @@
 
 #include "vec.h"
 #include <QVector>
+
 class Runge_Kutta
 {
 private:
@@ -18,6 +19,8 @@ public:
     static std::pair<QVector<double>, QVector<double>> calc(double t, double dt, double x, double y, double Ux, double Uy, double g)
     {
         std::pair<QVector<double>, QVector<double>> result;
+        result.first.push_back(x);
+        result.second.push_back(y);
         vec U(x, y, Ux, Uy);
         vec k1, k2, k3, k4;
         while(U.y >= 0)
@@ -34,5 +37,36 @@ public:
         return result;
     }
 };
+class Runge_Kutta1
+{
+private:
+    static inline double F(double x, double y)
+    {
+        return   y/(x+sqrt(x*x+y*y));
+    }
+public:
+    static std::pair<QVector<double>, QVector<double>> calc(double x0,//начало интегрирования
+                                                            double x, //конец интегрирования
+                                                            double y, //значение Y в точке X0
+                                                            double h//шаг интегрирования
+                                                            )
+    {
+        std::pair<QVector<double>, QVector<double>> result;
+        int n = static_cast<int>((x - x0) / h);
+        double k1, k2, k3, k4;
 
+        for(int i=0; i<n;i++)
+        {
+            k1 = h*F(x0, y);
+            k2 = h*F(x0 + h / 2.0, y + k1 / 2.0);
+            k3 = h*F(x0 + h / 2.0, y + k2 / 2.0);
+            k4 = h*F(x0 + h, y + k3);
+            y += (k1 + 2 * k2 + 2 * k3 + k4)  / 6.0;
+            x0 += h;
+            result.first.push_back(x0);
+            result.second.push_back(y);
+        }
+        return result;
+    }
+};
 #endif // RUNGE_KUTTA_H

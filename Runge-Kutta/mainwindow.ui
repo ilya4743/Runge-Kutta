@@ -11,93 +11,44 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Метод Рунге-Кутты</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout_2">
     <item row="0" column="0">
      <layout class="QGridLayout" name="gridLayout">
-      <item row="2" column="7">
-       <widget class="QLabel" name="label_11">
+      <item row="1" column="10">
+       <widget class="QLabel" name="label_4">
         <property name="text">
-         <string>м/c</string>
+         <string>x0</string>
         </property>
        </widget>
       </item>
-      <item row="1" column="0">
-       <spacer name="horizontalSpacer_6">
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
+      <item row="2" column="14">
+       <widget class="QLabel" name="label_7">
+        <property name="text">
+         <string>g</string>
         </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>40</width>
-          <height>20</height>
-         </size>
-        </property>
-       </spacer>
+       </widget>
       </item>
-      <item row="1" column="7">
+      <item row="2" column="15">
+       <widget class="QLineEdit" name="lineEdit_7">
+        <property name="text">
+         <string>9.8</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="8">
        <widget class="QLabel" name="label_10">
         <property name="text">
          <string>с</string>
         </property>
        </widget>
       </item>
-      <item row="1" column="4">
-       <spacer name="horizontalSpacer">
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>40</width>
-          <height>20</height>
-         </size>
-        </property>
-       </spacer>
-      </item>
-      <item row="2" column="12">
-       <widget class="QLabel" name="label_13">
-        <property name="text">
-         <string>м/с^2</string>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="15">
-       <widget class="QLineEdit" name="lineEdit_4"/>
-      </item>
-      <item row="1" column="14">
-       <widget class="QLabel" name="label_3">
-        <property name="text">
-         <string>y</string>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="11">
-       <widget class="QLineEdit" name="lineEdit_3"/>
-      </item>
-      <item row="2" column="8">
-       <spacer name="horizontalSpacer_5">
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>40</width>
-          <height>20</height>
-         </size>
-        </property>
-       </spacer>
-      </item>
-      <item row="1" column="3">
-       <widget class="QLabel" name="label_8">
-        <property name="text">
-         <string>с</string>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="13">
+      <item row="1" column="9">
        <spacer name="horizontalSpacer_3">
         <property name="orientation">
          <enum>Qt::Horizontal</enum>
@@ -110,14 +61,44 @@
         </property>
        </spacer>
       </item>
-      <item row="2" column="1">
-       <widget class="QLabel" name="label_5">
+      <item row="1" column="15">
+       <widget class="QLineEdit" name="lineEdit_4">
         <property name="text">
-         <string>Ux</string>
+         <string>0</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="10">
+       <widget class="QLabel" name="label_6">
+        <property name="text">
+         <string>Uy</string>
         </property>
        </widget>
       </item>
       <item row="2" column="4">
+       <widget class="QLabel" name="label_16">
+        <property name="text">
+         <string>с</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="18">
+       <spacer name="horizontalSpacer_5">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item row="1" column="13">
        <spacer name="horizontalSpacer_4">
         <property name="orientation">
          <enum>Qt::Horizontal</enum>
@@ -130,24 +111,102 @@
         </property>
        </spacer>
       </item>
-      <item row="2" column="6">
-       <widget class="QLineEdit" name="lineEdit_6"/>
-      </item>
-      <item row="1" column="1">
-       <widget class="QLabel" name="label">
+      <item row="1" column="14">
+       <widget class="QLabel" name="label_3">
         <property name="text">
-         <string>t</string>
+         <string>y0</string>
         </property>
        </widget>
       </item>
-      <item row="2" column="3">
+      <item row="1" column="11">
+       <widget class="QLineEdit" name="lineEdit_3">
+        <property name="text">
+         <string>0</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="16" colspan="2">
+       <widget class="QLabel" name="label_13">
+        <property name="text">
+         <string>м/с^2</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="4">
+       <widget class="QLabel" name="label_8">
+        <property name="text">
+         <string>с</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1" colspan="2">
+       <widget class="QLabel" name="label">
+        <property name="text">
+         <string>t0</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <spacer name="horizontalSpacer">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item row="2" column="11">
+       <widget class="QLineEdit" name="lineEdit_6">
+        <property name="text">
+         <string>2</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="8">
        <widget class="QLabel" name="label_9">
         <property name="text">
          <string>м/c</string>
         </property>
        </widget>
       </item>
-      <item row="1" column="8">
+      <item row="2" column="3">
+       <widget class="QLineEdit" name="lineEdit_8">
+        <property name="text">
+         <string>2</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="6">
+       <widget class="QLabel" name="label_5">
+        <property name="text">
+         <string>Ux</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="7">
+       <widget class="QLineEdit" name="lineEdit_5">
+        <property name="text">
+         <string>1</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="5">
        <spacer name="horizontalSpacer_2">
         <property name="orientation">
          <enum>Qt::Horizontal</enum>
@@ -160,35 +219,25 @@
         </property>
        </spacer>
       </item>
-      <item row="2" column="5">
-       <widget class="QLabel" name="label_6">
+      <item row="0" column="0" colspan="19">
+       <widget class="QCustomPlot" name="widget" native="true"/>
+      </item>
+      <item row="1" column="7">
+       <widget class="QLineEdit" name="lineEdit_2">
         <property name="text">
-         <string>Uy</string>
+         <string>0.05</string>
         </property>
-       </widget>
-      </item>
-      <item row="2" column="9">
-       <widget class="QLabel" name="label_7">
-        <property name="text">
-         <string>g</string>
-        </property>
-       </widget>
-      </item>
-      <item row="2" column="11">
-       <widget class="QLineEdit" name="lineEdit_7"/>
-      </item>
-      <item row="1" column="9">
-       <widget class="QLabel" name="label_4">
-        <property name="text">
-         <string>x</string>
+        <property name="alignment">
+         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
         </property>
        </widget>
       </item>
       <item row="1" column="6">
-       <widget class="QLineEdit" name="lineEdit_2"/>
-      </item>
-      <item row="2" column="2">
-       <widget class="QLineEdit" name="lineEdit_5"/>
+       <widget class="QLabel" name="label_2">
+        <property name="text">
+         <string>dt</string>
+        </property>
+       </widget>
       </item>
       <item row="1" column="12">
        <widget class="QLabel" name="label_12">
@@ -197,84 +246,43 @@
         </property>
        </widget>
       </item>
-      <item row="1" column="16">
+      <item row="1" column="16" colspan="2">
        <widget class="QLabel" name="label_14">
         <property name="text">
          <string>м</string>
         </property>
        </widget>
       </item>
-      <item row="1" column="5">
-       <widget class="QLabel" name="label_2">
+      <item row="1" column="3">
+       <widget class="QLineEdit" name="lineEdit">
         <property name="text">
-         <string>dt</string>
+         <string>0</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
         </property>
        </widget>
       </item>
-      <item row="1" column="2">
-       <widget class="QLineEdit" name="lineEdit"/>
-      </item>
-      <item row="1" column="17">
-       <spacer name="horizontalSpacer_7">
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
+      <item row="2" column="12">
+       <widget class="QLabel" name="label_11">
+        <property name="text">
+         <string>м/c</string>
         </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>40</width>
-          <height>20</height>
-         </size>
-        </property>
-       </spacer>
+       </widget>
       </item>
-      <item row="3" column="0" colspan="18">
+      <item row="2" column="1" colspan="2">
+       <widget class="QLabel" name="label_15">
+        <property name="text">
+         <string>t</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0" colspan="19">
        <widget class="QPushButton" name="pushButton">
         <property name="text">
          <string>Рассчитать</string>
         </property>
        </widget>
-      </item>
-      <item row="0" column="0" colspan="18">
-       <widget class="QCustomPlot" name="widget" native="true"/>
-      </item>
-      <item row="2" column="0">
-       <spacer name="horizontalSpacer_8">
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>40</width>
-          <height>20</height>
-         </size>
-        </property>
-       </spacer>
-      </item>
-      <item row="2" column="13">
-       <spacer name="horizontalSpacer_9">
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>40</width>
-          <height>20</height>
-         </size>
-        </property>
-       </spacer>
-      </item>
-      <item row="2" column="17">
-       <spacer name="horizontalSpacer_10">
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>40</width>
-          <height>20</height>
-         </size>
-        </property>
-       </spacer>
       </item>
      </layout>
     </item>
