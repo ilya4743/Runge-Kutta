@@ -1,4 +1,0 @@
-/home/ilya/Desktop/Runge-Kutta/build-Runge-Kutta-Desktop-Debug/CMakeFiles/Runge-Kutta.dir
-/home/ilya/Desktop/Runge-Kutta/build-Runge-Kutta-Desktop-Debug/CMakeFiles/edit_cache.dir
-/home/ilya/Desktop/Runge-Kutta/build-Runge-Kutta-Desktop-Debug/CMakeFiles/rebuild_cache.dir
-/home/ilya/Desktop/Runge-Kutta/build-Runge-Kutta-Desktop-Debug/CMakeFiles/Runge-Kutta_autogen.dir
