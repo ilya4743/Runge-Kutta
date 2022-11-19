@@ -42,7 +42,7 @@ class Runge_Kutta1
 private:
     static inline double F(double x, double y)
     {
-        return   y/(x+sqrt(x*x+y*y));
+        return   1 / ( x * x + y * y  + 2) ;
     }
 public:
     static std::pair<QVector<double>, QVector<double>> calc(double x0,//начало интегрирования

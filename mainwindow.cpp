@@ -53,16 +53,16 @@ void MainWindow::makeGraph(std::pair<QVector<double>, QVector<double>> res)
 
 void MainWindow::on_pushButton_clicked()
 {
-    double t0=ui->lineEdit->text().toDouble();
-    double t=ui->lineEdit_8->text().toDouble();
-    double dt=ui->lineEdit_2->text().toDouble();
-    double x0=ui->lineEdit_3->text().toDouble();
-    double y0=ui->lineEdit_4->text().toDouble();
-    double Ux=ui->lineEdit_5->text().toDouble();
-    double Uy=ui->lineEdit_6->text().toDouble();
-    double g=ui->lineEdit_7->text().toDouble();
-    std::pair<QVector<double>, QVector<double>> test=Runge_Kutta::calc(t,dt,x0,y0,Ux,Uy,g);
+    double x0=ui->lineEdit->text().toDouble();
+    double x=ui->lineEdit_8->text().toDouble();
+    double y0=ui->lineEdit_2->text().toDouble();
+//    double x0=ui->lineEdit_3->text().toDouble();
+//    double y0=ui->lineEdit_4->text().toDouble();
+    double h=ui->lineEdit_5->text().toDouble();
+//    double Uy=ui->lineEdit_6->text().toDouble();
+//    double g=ui->lineEdit_7->text().toDouble();
+    //std::pair<QVector<double>, QVector<double>> test=Runge_Kutta::calc(t,dt,x0,y0,Ux,Uy,g);
 
-    //std::pair<QVector<double>, QVector<double>> test=Runge_Kutta1::calc(t0,t,y0,dt);
+    std::pair<QVector<double>, QVector<double>> test=Runge_Kutta1::calc(x0,x,y0,h);
     makeGraph(test);
 }
